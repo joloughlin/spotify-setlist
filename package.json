@@ -1,6 +1,6 @@
 {
-  "name": "personal-react-redux-starter-kit",
-  "repository": "personal-react-redux-starter-kit",
+  "name": "react-starter-kit",
+  "repository": "react-starter-kit",
   "version": "1.1.0",
   "engines": {
     "node": "6.2.1"
@@ -10,8 +10,9 @@
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server",
     "test": "NODE_ENV=test node_modules/.bin/karma start",
-    "test:single-run": "npm run test -- --single-run",
-    "production": "NODE_ENV=production node_modules/.bin/webpack"
+    "test-single-run": "npm run test -- --single-run",
+    "production": "NODE_ENV=production node_modules/.bin/webpack",
+    "initial-setup": "rm -rf .git && git init && git add -A && git commit -m 'Initialize repository' && npm install && npm start"
   },
   "author": "",
   "license": "ISC",
