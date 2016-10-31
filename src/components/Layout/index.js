@@ -1,12 +1,20 @@
-import React from 'react';
-import styles from './styles.css';
+import React, { PropTypes } from 'react';
+import DevTools from 'containers/DevTools';
+import Header from 'components/Header';
 
-const Layout = ({ children }) => {
-  return (
-    <div className={styles.root}>
-      {children}
-    </div>
-  );
+// eslint-disable-next-line no-undef
+let devToolsComponent = __DEVELOPMENT__ && <DevTools />;
+
+const Layout = ({ children }) => (
+  <div>
+    <Header />
+    {children}
+    {devToolsComponent}
+  </div>
+);
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;

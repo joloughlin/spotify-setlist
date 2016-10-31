@@ -1,16 +1,14 @@
 import { shallow, mount } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
-import { browserHistory } from 'react-router';
-import { push, syncHistoryWithStore } from 'react-router-redux';
+import createObjectFromFixture from './support/createObjectFromFixture';
+import * as responseCreators from './support/responseCreators';
 
-Object.assign(global, {
-  browserHistory,
+Object.assign(global, responseCreators, {
   mount,
-  push,
   React,
   shallow,
-  syncHistoryWithStore
+  createObjectFromFixture,
 });
 
 beforeEach(() => {

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { propTypes as RouterPropTypes } from 'react-router';
 
-class HomeContainer extends Component {
+class LogInContainer extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     isExact: PropTypes.bool.isRequired,
@@ -13,8 +13,8 @@ class HomeContainer extends Component {
   };
 
   render() {
-    return <h1>Home Container Component</h1>;
+    return <h1>Log In Container Component</h1>;
   }
 }
 
-export default connect()(HomeContainer);
+export default connect()(LogInContainer);

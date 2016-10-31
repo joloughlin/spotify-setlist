@@ -1,0 +1,12 @@
+@import '../../constants/colors.scss';
+
+.navbar {
+  background-color: $yellow;
+}
+
+.navbar-default {
+  .navbar-brand,
+  .navbar-nav > li > a {
+    color: $black;
+  }
+}
