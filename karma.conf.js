@@ -3,8 +3,6 @@ console.log('KARMA KARMA KARMA KARMA KARMA CHAMELON!!!!!!!!!!!!!!!!!!!!!!!!!!');
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
-var cssGlobalVariables = require('./src/constants/cssGlobalVariables');
-var postcssSimpleVars = require('postcss-simple-vars');
 
 module.exports = function(config) {
   config.set({
@@ -17,7 +15,7 @@ module.exports = function(config) {
     // files that Karma will server to the browser
     files: [
       // load fixtures
-      'test/fixtures/*.json',
+      'test/fixtures/**/*.json',
       // use Babel polyfill to emulate a full ES6 environment in PhantomJS
       'node_modules/babel-polyfill/dist/polyfill.js',
       // use whatwg-fetch polyfill
@@ -29,7 +27,7 @@ module.exports = function(config) {
     // before serving test/testHelper.js to the browser
     preprocessors: {
       // process json files with karma-json-fixtures-preprocessor
-      'test/fixtures/*.json': ['json_fixtures'],
+      'test/fixtures/**/*.json': ['json_fixtures'],
       'test/testHelper.js': [
         // use karma-webpack to preprocess the file via webpack
         'webpack',
@@ -59,18 +57,15 @@ module.exports = function(config) {
           },
           // use css modules and post css
           {
-            test: /\.css$/,
-            loaders: ['style', 'css?modules&importLoaders=1', 'postcss']
-          }
+            test: /\.(css|scss)$/,
+            loaders: ['style', 'css', 'sass', 'postcss']
+          },
         ]
       },
 
       // set post css configuration
       postcss: function() {
-        return [
-          autoprefixer,
-          postcssSimpleVars({ variables: cssGlobalVariables })
-        ];
+        return [autoprefixer];
       },
 
       // Set the NODE_ENV to test

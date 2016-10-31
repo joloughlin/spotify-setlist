@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { routerReducer as routing } from 'react-router-redux';
+import accessToken from 'reducers/accessToken';
 
-let rootReducer = combineReducers({ routing });
+let rootReducer = combineReducers({ accessToken });
 
 export default rootReducer;
