@@ -1,21 +1,19 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import DevTools from 'containers/DevTools';
-import rootReducer from 'reducers';
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import DevTools from 'containers/DevTools'
+import rootReducer from 'reducers'
 
-// eslint-disable-next-line no-undef
-let composeFunctions = __DEVELOPMENT__ ?
-  [applyMiddleware(thunkMiddleware), DevTools.instrument()]:
-  [applyMiddleware(thunkMiddleware)];
+const developmentComposeFunctions = __DEVELOPMENT__ ? [DevTools.instrument()] : []
+const composeFunctions = [applyMiddleware(thunkMiddleware), ...developmentComposeFunctions]
 
-let configureStore = preloadedState => {
-  let store = createStore(
+const configureStore = preloadedState => {
+  const store = createStore(
     rootReducer,
     preloadedState,
     compose(...composeFunctions)
-  );
+  )
 
-  return store;
-};
+  return store
+}
 
-export default configureStore;
+export default configureStore

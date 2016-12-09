@@ -3,18 +3,18 @@
   "repository": "react-starter-kit",
   "version": "1.1.0",
   "engines": {
-    "node": "6.2.1"
+    "node": "6.9.2"
   },
-  "description": "DRF starter kit for React and Redux applications",
+  "description": "Intrepid starter kit for React with Redux applications",
   "main": "webpack.config.js",
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server",
     "test": "NODE_ENV=test node_modules/.bin/karma start",
     "test-single-run": "npm run test -- --single-run",
     "production": "NODE_ENV=production node_modules/.bin/webpack",
-    "initial-setup": "rm -rf .git && git init && git add -A && git commit -m 'Initialize repository' && npm install && npm start"
+    "initial-setup": "rm -rf .git && git init && git add -A && git commit -m 'Initialize repository' && yarn install"
   },
-  "author": "",
+  "author": "David Rodriguez Fuentes <davidrf.developer@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "6.4.0",
@@ -24,6 +24,7 @@
     "babel-plugin-transform-class-properties": "6.18.0",
     "babel-preset-latest": "6.16.0",
     "babel-preset-react": "6.11.1",
+    "babel-preset-stage-3": "6.17.0",
     "clean-webpack-plugin": "0.1.10",
     "css-loader": "0.23.1",
     "enzyme": "2.4.1",
@@ -49,7 +50,7 @@
     "node-sass": "3.10.1",
     "phantomjs-prebuilt": "2.1.12",
     "postcss-loader": "0.9.1",
-    "react-addons-test-utils": "15.3.1",
+    "react-addons-test-utils": "^15.4.1",
     "redux-devtools": "3.3.1",
     "redux-devtools-dock-monitor": "1.1.1",
     "redux-devtools-log-monitor": "1.1.1",
@@ -64,13 +65,13 @@
     "express": "4.14.0",
     "jquery": "3.1.1",
     "lodash": "4.15.0",
-    "react": "15.3.2",
-    "react-dom": "15.3.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "react-redux": "4.4.5",
     "react-router": "4.0.0-alpha.5",
     "react-router-redux": "4.0.5",
     "redux": "3.5.2",
-    "redux-form": "6.1.1",
+    "redux-form": "^6.3.1",
     "redux-thunk": "2.1.0",
     "whatwg-fetch": "1.0.0"
   }
