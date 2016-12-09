@@ -1,20 +1,17 @@
-import React, { PropTypes } from 'react';
-import DevTools from 'containers/DevTools';
-import Header from 'components/Header';
-
-// eslint-disable-next-line no-undef
-let devToolsComponent = __DEVELOPMENT__ && <DevTools />;
+import React, { PropTypes } from 'react'
+import DevTools from 'containers/DevTools'
+import Header from 'components/Header'
 
 const Layout = ({ children }) => (
   <div>
     <Header />
     {children}
-    {devToolsComponent}
+    {__DEVELOPMENT__ && <DevTools />}
   </div>
-);
+)
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
-};
+  children: PropTypes.node.isRequired,
+}
 
-export default Layout;
+export default Layout

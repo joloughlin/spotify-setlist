@@ -48,6 +48,14 @@ module.exports = function(config) {
         'react/lib/ReactContext': true
       },
       module: {
+        preLoaders: [
+          // lint test code with ESLint
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            loader: 'eslint'
+          }
+        ],
         loaders: [
           // use babel-loader to transpile the test and src folders
           {
@@ -70,7 +78,10 @@ module.exports = function(config) {
 
       // Set the NODE_ENV to test
       plugins: [
-        new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) }),
+        new webpack.DefinePlugin({
+          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+          __DEVELOPMENT__: JSON.stringify(false)
+        }),
       ],
 
       // relative path starts out at the src folder when importing modules
