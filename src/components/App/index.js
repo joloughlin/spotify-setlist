@@ -1,15 +1,16 @@
 import React from 'react'
-import { Match } from 'react-router'
+import { Route } from 'react-router-dom'
 import Layout from 'components/Layout'
 import HomeContainer from 'containers/HomeContainer'
 import LogInContainer from 'containers/LogInContainer'
-import SignUpContainer from 'containers/SignUpContainer'
+import AuthRoute from 'containers/AuthRoute'
+import Private from 'components/Private'
 
 const App = () => (
   <Layout>
-    <Match exactly pattern="/" component={HomeContainer} />
-    <Match exactly pattern="/login" component={LogInContainer} />
-    <Match exactly pattern="/sign-up" component={SignUpContainer} />
+    <Route exact path="/" component={HomeContainer} />
+    <Route path="/login" component={LogInContainer} />
+    <AuthRoute path="/private" component={Private} />
   </Layout>
 )
 

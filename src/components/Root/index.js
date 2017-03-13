@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react'
 import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router'
+import { ConnectedRouter } from 'react-router-redux'
 import App from 'components/App'
 
-const Root = ({ store }) => (
+const Root = ({ history, store }) => (
   <Provider store={store}>
-    <BrowserRouter>
+    <ConnectedRouter history={history}>
       <App />
-    </BrowserRouter>
+    </ConnectedRouter>
   </Provider>
 )
 

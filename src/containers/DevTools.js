@@ -10,5 +10,5 @@ export default createDevTools(
     defaultPosition="bottom"
   >
     <LogMonitor />
-  </DockMonitor>
+  </DockMonitor>,
 )
