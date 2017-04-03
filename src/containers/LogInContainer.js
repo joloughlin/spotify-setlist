@@ -1,20 +1,19 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { propTypes as RouterPropTypes } from 'react-router'
+import LogIn from 'components/LogIn'
+import { createAuthentication } from 'reducers/authentication'
+import { push } from 'react-router-redux'
 
 class LogInContainer extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    isExact: PropTypes.bool.isRequired,
-    location: RouterPropTypes.location.isRequired,
-    params: PropTypes.object.isRequired,
-    pathname: PropTypes.string.isRequired,
-    pattern: PropTypes.string.isRequired,
+  onSubmit = values => this.props.createAuthentication(values)
+  onSubmitSuccess = () => {
+    const { from } = this.props.location.state || { from: { pathname: '/' } }
+    this.props.push(from)
   }
 
   render() {
-    return <h1>Log In Container Component</h1>
+    return <LogIn onSubmit={this.onSubmit} onSubmitSuccess={this.onSubmitSuccess} />
   }
 }
 
-export default connect()(LogInContainer)
+export default connect(null, { createAuthentication, push })(LogInContainer)

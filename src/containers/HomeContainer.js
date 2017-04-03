@@ -1,20 +1,21 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { propTypes as RouterPropTypes } from 'react-router'
+import { currentUser } from 'utilities/selectors'
 
 class HomeContainer extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    isExact: PropTypes.bool.isRequired,
-    location: RouterPropTypes.location.isRequired,
-    params: PropTypes.object.isRequired,
-    pathname: PropTypes.string.isRequired,
-    pattern: PropTypes.string.isRequired,
-  }
-
   render() {
-    return <h1>Home Container Component</h1>
+    return (
+      <div>
+        <h1>Home Container Component</h1>
+        {this.props.currentUser &&
+          <span>Sign in as: {this.props.currentUser.email}</span>}
+      </div>
+    )
   }
 }
 
-export default connect()(HomeContainer)
+const mapStateToProps = state => ({
+  currentUser: currentUser(state)
+})
+
+export default connect(mapStateToProps)(HomeContainer)

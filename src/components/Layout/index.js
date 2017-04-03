@@ -1,12 +1,15 @@
 import React, { PropTypes } from 'react'
 import DevTools from 'containers/DevTools'
-import Header from 'components/Header'
+import HeaderContainer from 'containers/HeaderContainer'
+import { isDevelopment } from 'constants/values'
 
 const Layout = ({ children }) => (
   <div>
-    <Header />
-    {children}
-    {__DEVELOPMENT__ && <DevTools />}
+    <HeaderContainer />
+    <div className="container">
+      {children}
+    </div>
+    {isDevelopment && <DevTools />}
   </div>
 )
 
