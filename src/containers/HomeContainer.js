@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { currentUser } from 'utilities/selectors'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { currentUser } from 'utilities/selectors';
 
 class HomeContainer extends Component {
   render() {
@@ -10,12 +10,12 @@ class HomeContainer extends Component {
         {this.props.currentUser &&
           <span>Sign in as: {this.props.currentUser.email}</span>}
       </div>
-    )
+    );
   }
 }
 
 const mapStateToProps = state => ({
-  currentUser: currentUser(state)
-})
+  currentUser: currentUser(state),
+});
 
-export default connect(mapStateToProps)(HomeContainer)
+export default connect(mapStateToProps)(HomeContainer);

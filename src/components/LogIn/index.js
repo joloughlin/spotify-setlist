@@ -1,7 +1,7 @@
-import React from 'react'
-import { Field, reduxForm, propTypes as reduxFormPropTypes } from 'redux-form'
-import TextField from 'components/Form/TextField'
-import { required, minimumLength7 } from 'utilities/validations'
+import React from 'react';
+import { Field, reduxForm, propTypes as reduxFormPropTypes } from 'redux-form';
+import TextField from 'components/Form/TextField';
+import { required, minimumLength7 } from 'utilities/validations';
 
 const LogIn = ({ handleSubmit, error }) => (
   <div>
@@ -25,12 +25,12 @@ const LogIn = ({ handleSubmit, error }) => (
       <button type="submit" className="btn btn-default">Submit</button>
     </form>
   </div>
-)
+);
 
 LogIn.propTypes = {
   ...reduxFormPropTypes,
-}
+};
 
 export default reduxForm({
   form: 'LogIn',
-})(LogIn)
+})(LogIn);
