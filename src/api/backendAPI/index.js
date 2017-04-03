@@ -1,5 +1,5 @@
-import * as authentications from './authentications'
+import * as authentications from './authentications';
 
 export default {
   authentications,
-}
+};

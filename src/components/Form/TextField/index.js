@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 const ErrorOrWarning = ({ error, touched, warning }) => {
-  const message = error || warning
-  return !touched || !message ?
-    null :
-    <span>{message}</span>
-}
+  const message = error || warning;
+  return !touched || !message ? null : <span>{message}</span>;
+};
 
-export default function TextField ({ input, label, meta: { touched, error, warning }, placeholder, type }) {
+export default function TextField(
+  { input, label, meta: { touched, error, warning }, placeholder, type },
+) {
   return (
     <div className="form-group">
       <label htmlFor={label}>{label}</label>
@@ -16,5 +16,5 @@ export default function TextField ({ input, label, meta: { touched, error, warni
         <ErrorOrWarning error={error} touched={touched} warning={warning} />
       </div>
     </div>
-  )
+  );
 }

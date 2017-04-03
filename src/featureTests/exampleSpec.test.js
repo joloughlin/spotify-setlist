@@ -1,20 +1,20 @@
-import createRootPage from './support/createRootPage'
-import mockRequests from './support/mockRequests'
-import fetchMock from 'fetch-mock'
+import createRootPage from './support/createRootPage';
+import mockRequests from './support/mockRequests';
+import fetchMock from 'fetch-mock';
 
 describe('passing test', () => {
-  let page
+  let page;
 
   beforeEach(() => {
-    mockRequests()
-    page = createRootPage()
-  })
+    mockRequests();
+    page = createRootPage();
+  });
 
   afterEach(() => {
-    fetchMock.restore()
-  })
+    fetchMock.restore();
+  });
 
   it('should pass', () => {
-    expect(page.content()).toMatch('Home Container Component')
-  })
-})
+    expect(page.content()).toMatch('Home Container Component');
+  });
+});

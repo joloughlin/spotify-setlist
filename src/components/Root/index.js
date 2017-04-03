@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react'
-import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'react-router-redux'
-import App from 'components/App'
+import React, { PropTypes } from 'react';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import App from 'components/App';
 
 const Root = ({ history, store }) => (
   <Provider store={store}>
@@ -9,10 +9,10 @@ const Root = ({ history, store }) => (
       <App />
     </ConnectedRouter>
   </Provider>
-)
+);
 
 Root.propTypes = {
   store: PropTypes.object.isRequired,
-}
+};
 
-export default Root
+export default Root;

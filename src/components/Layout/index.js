@@ -1,7 +1,7 @@
-import React, { PropTypes } from 'react'
-import DevTools from 'containers/DevTools'
-import HeaderContainer from 'containers/HeaderContainer'
-import { isDevelopment } from 'constants/values'
+import React, { PropTypes } from 'react';
+import DevTools from 'containers/DevTools';
+import HeaderContainer from 'containers/HeaderContainer';
+import { isDevelopment } from 'constants/values';
 
 const Layout = ({ children }) => (
   <div>
@@ -11,10 +11,10 @@ const Layout = ({ children }) => (
     </div>
     {isDevelopment && <DevTools />}
   </div>
-)
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './styles.scss'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './styles.scss';
 
 const Header = ({ currentUser, onLogOutClick }) => (
   <nav className="navbar navbar-default">
@@ -9,7 +9,8 @@ const Header = ({ currentUser, onLogOutClick }) => (
         <button
           type="button"
           className="navbar-toggle collapsed"
-          data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
           aria-expanded="false"
         >
           <span className="sr-only">Toggle navigation</span>
@@ -20,18 +21,21 @@ const Header = ({ currentUser, onLogOutClick }) => (
         <Link to="/" className="navbar-brand">Brand</Link>
       </div>
 
-      <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div
+        className="collapse navbar-collapse"
+        id="bs-example-navbar-collapse-1"
+      >
         <ul className="nav navbar-nav navbar-right">
           <li><Link to="/private">Private</Link></li>
           <li>
-            {currentUser ?
-              <Link onClick={onLogOutClick} to="/">Log Out</Link> :
-              <Link to="/login">Log In</Link>}
+            {currentUser
+              ? <Link onClick={onLogOutClick} to="/">Log Out</Link>
+              : <Link to="/login">Log In</Link>}
           </li>
         </ul>
       </div>
     </div>
   </nav>
-)
+);
 
-export default Header
+export default Header;
