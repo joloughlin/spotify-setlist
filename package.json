@@ -10,9 +10,12 @@
   "scripts": {
     "start": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config=config/webpack.development.babel.js",
     "test": "node scripts/test.js --env=jsdom",
-    "build": "node_modules/.bin/webpack-dev-server --config=config/webpack.build.babel.js",
+    "build": "node_modules/.bin/webpack --config=config/webpack.build.babel.js",
     "initial-setup": "rm -rf .git && git init && git add -A && git commit -m 'Initialize repository' && yarn install",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "deploy": "npm run build && node scripts/deploy.js",
+    "list-builds": "node scripts/listBuilds.js",
+    "activate-build": "node scripts/activateBuild.js"
   },
   "author": "David Rodriguez Fuentes <davidrf.developer@gmail.com>",
   "license": "ISC",
@@ -49,6 +52,7 @@
     "prettier": "^0.22.0",
     "react-addons-test-utils": "^15.4.2",
     "react-page-object": "^1.0.11",
+    "redis": "^2.7.1",
     "redux-devtools": "^3.3.2",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.2.0",
