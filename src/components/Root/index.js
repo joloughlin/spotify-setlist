@@ -1,15 +1,15 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
-import App from 'components/App';
+import { BrowserRouter } from 'react-router-dom';
+import App from '../App';
 
-const Root = ({ history, store }) => (
+const Root = ({ store }) =>
   <Provider store={store}>
-    <ConnectedRouter history={history}>
+    <BrowserRouter>
       <App />
-    </ConnectedRouter>
-  </Provider>
-);
+    </BrowserRouter>
+  </Provider>;
 
 Root.propTypes = {
   store: PropTypes.object.isRequired,

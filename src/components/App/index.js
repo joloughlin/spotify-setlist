@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Layout from 'components/Layout';
-import HomeContainer from 'containers/HomeContainer';
-import LogInContainer from 'containers/LogInContainer';
-import AuthRoute from 'containers/AuthRoute';
-import Private from 'components/Private';
+import { loginPath, profilePath, rootPath } from 'utils/paths';
+import HomePage from '../HomePage/Root';
+import LogIn from '../LogIn/Root';
+import Profile from '../Profile/Root';
+import Layout from '../Layout/Root';
 
 const App = () => (
   <Layout>
-    <Route exact path="/" component={HomeContainer} />
-    <Route path="/login" component={LogInContainer} />
-    <AuthRoute path="/private" component={Private} />
+    <Route exact path={rootPath} component={HomePage} />
+    <Route path={loginPath} component={LogIn} />
+    <Route path={profilePath} component={Profile} />
   </Layout>
 );
 

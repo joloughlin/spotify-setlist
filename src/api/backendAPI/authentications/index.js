@@ -1,0 +1,33 @@
+import { SubmissionError } from 'redux-form';
+import { backendAPIUrl } from 'constants/values';
+import { bodyHeaders } from 'utils/apiHeaders.js';
+import { normalizeAuthentication } from './normalizers';
+import loginSuccessFixture from './fixtures/loginSuccess.json';
+
+export const create = async values => {
+  const body = JSON.stringify({ session: values });
+  const url = `${backendAPIUrl}/authentications`;
+  const init = {
+    method: 'POST',
+    body,
+    headers: bodyHeaders,
+  };
+
+  // const response = await fetch(url, init);
+
+  const response = {
+    ok: true,
+    json: async () => loginSuccessFixture,
+    url,
+    init,
+  };
+
+  let responseBody;
+  if (response.ok) {
+    responseBody = await response.json();
+    return normalizeAuthentication(responseBody);
+  } else if (response.status === 422) {
+    const body = await response.json();
+    throw new SubmissionError({ _error: body });
+  }
+};

@@ -11,6 +11,11 @@ require('dotenv').config({ silent: true });
 const jest = require('jest');
 const argv = process.argv.slice(2);
 
+// See https://facebook.github.io/jest/docs/troubleshooting.html#tests-are-extremely-slow-on-docker-and-or-continuous-integration-ci-server
+if (process.env.CI) {
+  argv.push('--runInBand');
+}
+
 // Watch unless on CI or in coverage mode
 if (!process.env.CI && argv.indexOf('--coverage') < 0) {
   argv.push('--watch');
