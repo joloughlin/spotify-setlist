@@ -3,5 +3,7 @@
 node_modules
 npm-debug.log
 .env
+.env.production
+.env.staging
 coverage
 dump.rdb

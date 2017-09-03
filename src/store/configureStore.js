@@ -1,31 +1,23 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import DevTools from 'containers/DevTools';
+import { DevTools } from 'components/Layout/DevTools';
 import rootReducer from 'reducers';
-import localStorageMiddleware from 'middlewares/localStorageMiddleware';
-import { routerMiddleware } from 'react-router-redux';
+import localStorageMiddleware from './middlewares/localStorageMiddleware';
 import { isDevelopment } from 'constants/values';
 
-const configureStore = ({ history, preloadedState }) => {
-  const developmentComposeFunctions = isDevelopment
-    ? [DevTools.instrument()]
-    : [];
-  const composeFunctions = [
-    applyMiddleware(
-      thunkMiddleware,
-      routerMiddleware(history),
-      localStorageMiddleware,
-    ),
-    ...developmentComposeFunctions,
-  ];
+let composeFunctions = [
+  applyMiddleware(thunkMiddleware, localStorageMiddleware),
+];
 
-  const store = createStore(
+if (isDevelopment) {
+  composeFunctions = [...composeFunctions, DevTools.instrument()];
+}
+
+const configureStore = ({ localStorageInitialState }) =>
+  createStore(
     rootReducer,
-    preloadedState,
+    localStorageInitialState,
     compose(...composeFunctions),
   );
-
-  return store;
-};
 
 export default configureStore;
