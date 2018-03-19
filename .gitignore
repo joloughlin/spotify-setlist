@@ -2,7 +2,7 @@
 /coverage
 node_modules
 npm-debug.log
-.env
+.env.development
 .env.production
 .env.staging
 coverage

@@ -6,7 +6,7 @@ If you have not already, please install:
 1. Run the following commands
     ```
     $ asdf install
-    $ cp .env.sample .env
+    $ cp .env.sample .env.development
     $ yarn install
     $ yarn run initial-setup
     ```
@@ -21,7 +21,7 @@ If you have not already, please install:
 1. Run the following commands
     ```
     $ asdf install
-    $ cp .env.sample .env
+    $ cp .env.sample .env.development
     $ yarn install
     $ yarn start
     ```

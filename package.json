@@ -8,10 +8,11 @@
   "description": "Intrepid starter kit for React with Redux applications",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config=config/webpack.development.js",
+    "start": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config=config/webpack.config.js --env.env=development",
     "test": "node scripts/test.js --env=jsdom",
-    "build-production": "NODE_ENV=production node_modules/.bin/webpack --config=config/webpack.production.js",
-    "build-staging": "NODE_ENV=staging node_modules/.bin/webpack --config=config/webpack.staging.js",
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config=config/webpack.config.js",
+    "build-staging": "yarn build --env.env=staging",
+    "build-production": "yarn build --env.env=production",
     "initial-setup": "rm -rf .git && git init && git add -A && git commit -m 'Initialize repository' && yarn install",
     "precommit": "lint-staged",
     "deploy-staging": "yarn build-staging && node scripts/deploy.js staging",
@@ -63,6 +64,7 @@
     "url-loader": "^0.5.9",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.2",
     "webpack-s3-plugin": "^1.0.0-rc.0"
   },
   "dependencies": {
