@@ -1,31 +1,31 @@
-# Intrepid React Starter Kit
-## First Time Starter Kit Set up
+# Intrepid React Starter Kit - Setting Up A New Project
 If you have not already, please install:
-* [Node Version Manager (nvm)](https://github.com/creationix/nvm)
+* [asdf](https://github.com/asdf-vm/asdf)
 * [Yarn](https://yarnpkg.com/en/docs/install)
 
-1. Clone down the repository
+1. Run the following commands
     ```
-    $ git clone https://github.com/IntrepidPursuits/react-starter-kit.git your-app-name
-    $ cd your-app-name
+    $ asdf install
+    $ cp .env.sample .env
+    $ yarn install
+    $ yarn run initial-setup
     ```
+2. Delete the "Intrepid React Starter Kit - Setting Up A New Project" section from this file.
 
-2. Run `nvm install`.
-3. Run `cp .env.sample .env`.
-4. Run `yarn run initial-setup`.
-5. Run `yarn start` and visit [locahost:8080](http://localhost:8080) to see
-   your appplication.
-6. Delete the "First Time Starter Kit Set up" section from this file.
-
-## Setup
+# Project Name
+## Local Development Set Up
 If you have not already, please install:
-* [Node Version Manager (nvm)](https://github.com/creationix/nvm)
+* [asdf](https://github.com/asdf-vm/asdf)
 * [Yarn](https://yarnpkg.com/en/docs/install)
 
-1. Run `nvm install`.
-2. Run `cp .env.sample .env`.
-3. Run `yarn install`.
-4. Run `yarn start` and visit [locahost:8080](http://localhost:8080) to see
+1. Run the following commands
+    ```
+    $ asdf install
+    $ cp .env.sample .env
+    $ yarn install
+    $ yarn start
+    ```
+2. Visit [locahost:8080](http://localhost:8080) to see
    your appplication.
 
 This application uses Yarn. **Do not use `npm install` commands**. Instead use the

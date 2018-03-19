@@ -3,7 +3,7 @@
   "repository": "react-starter-kit",
   "version": "1.2.0",
   "engines": {
-    "node": "8.2.0"
+    "node": "8.10.0"
   },
   "description": "Intrepid starter kit for React with Redux applications",
   "main": "webpack.config.js",
