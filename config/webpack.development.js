@@ -35,7 +35,6 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)(\?.*)?$/,
           /\.css$/,
-          /\.scss/,
           /\.json$/,
           /\.svg$/,
         ],
@@ -54,23 +53,23 @@ module.exports = {
         },
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
         exclude: /node_modules/,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
-            options: { modules: true, importLoaders: 2, localIdentName: '[path][name]__[local]--[hash:base64:16]' },
+            options: {
+              modules: true,
+              importLoaders: 2,
+              localIdentName: '[path][name]__[local]--[hash:base64:16]',
+            },
           },
           postcssLoader,
-          {
-            loader: 'sass-loader',
-            options: { includePaths: [path.resolve('src/constants')] },
-          },
         ],
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
         include: /node_modules/,
         use: [
           'style-loader',

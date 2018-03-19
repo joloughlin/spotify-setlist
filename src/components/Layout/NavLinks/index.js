@@ -1,7 +1,7 @@
 import React from 'react';
 import NavLink from '../NavLink';
 import { loginPath, rootPath } from 'utils/paths';
-import styles from './styles.scss';
+import styles from './styles.css';
 import enhance from './enhance';
 
 export const text = {

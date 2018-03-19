@@ -1,8 +1,6 @@
-@import 'colors';
-
 .container {
   align-items: center;
-  background-color: $yellow;
+  background-color: var(--yellow);
   display: flex;
   height: 50px;
   justify-content: space-between;
@@ -10,6 +8,6 @@
 }
 
 .brand {
-  color: $black;
+  color: var(--black);
   text-decoration: none;
 }

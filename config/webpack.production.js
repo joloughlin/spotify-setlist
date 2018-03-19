@@ -36,7 +36,6 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)(\?.*)?$/,
           /\.css$/,
-          /\.scss/,
           /\.json$/,
           /\.svg$/,
         ],
@@ -52,7 +51,7 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
         exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -62,15 +61,11 @@ module.exports = {
               options: { modules: true, importLoaders: 2 },
             },
             postcssLoader,
-            {
-              loader: 'sass-loader',
-              options: { includePaths: [path.resolve('src/constants')] },
-            },
           ],
         }),
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
         include: /node_modules/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',

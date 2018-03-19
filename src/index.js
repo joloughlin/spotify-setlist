@@ -3,6 +3,8 @@ import 'normalize.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'whatwg-fetch';
+import './constants/colors.css';
+import './constants/styles.css';
 import Root from './components/Root';
 import configureStore from './store/configureStore';
 import { readLocalStorage } from './utils/localStorage';

@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './styles.scss';
+import styles from './styles.css';
 import { Link } from 'react-router-dom';
 
-const NavLink = ({ children, ...props }) =>
+const NavLink = ({ children, ...props }) => (
   <li className={styles.container}>
     <Link {...props} className={styles.link}>
       {children}
     </Link>
-  </li>;
+  </li>
+);
 
 NavLink.propTypes = {
   children: PropTypes.node.isRequired,

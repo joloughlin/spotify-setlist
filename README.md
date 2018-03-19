@@ -46,7 +46,7 @@ If you would like coverage information, run:
 [Enzyme](https://github.com/airbnb/enzyme) and [Enzyme matchers](https://github.com/blainekasten/enzyme-matchers) have been installed for testing of React components.
 
 ### CSS
-* Uses [SASS](http://sass-lang.com/) and [CSS Modules](https://github.com/css-modules/css-modules) for styling.
+* [CSS Modules](https://github.com/css-modules/css-modules) for styling.
 * Vendor prefixes are automatically added via [Autoprefixer](https://github.com/postcss/autoprefixer).
 
 ### Linting and Code Formatting
