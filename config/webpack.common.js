@@ -13,6 +13,7 @@ module.exports = {
       {
         exclude: [
           /\.html$/,
+          /\.html.ejs$/,
           /\.(js|jsx)(\?.*)?$/,
           /\.css$/,
           /\.svg$/,

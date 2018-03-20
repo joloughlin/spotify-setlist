@@ -12,7 +12,7 @@ export const text = {
 
 const NavLinks = ({ isAuthenticated, logOut }) => (
   <nav>
-    <ul className={styles.container}>
+    <ul className={styles.root}>
       {isAuthenticated ? (
         <NavLink onClick={logOut} to={rootPath}>
           {text.logOut}

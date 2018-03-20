@@ -18,11 +18,13 @@
     "deploy-staging": "yarn build-staging && node scripts/deploy.js staging",
     "deploy-production": "yarn build-production && node scripts/deploy.js production",
     "list-builds": "node scripts/listBuilds",
-    "activate-build": "node scripts/activateBuild"
+    "activate-build": "node scripts/activateBuild",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "author": "David Rodriguez Fuentes <davidrf.developer@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/react": "^3.3.15",
     "autoprefixer": "^8.1.0",
     "babel-core": "^6.25.0",
     "babel-eslint": "8.2.2",
@@ -100,69 +102,6 @@
     "iOS >= 11",
     "Safari >= 11"
   ],
-  "babel": {
-    "presets": [
-      "react",
-      "stage-3"
-    ],
-    "plugins": [
-      "transform-class-properties"
-    ],
-    "env": {
-      "production": {
-        "presets": [
-          [
-            "env",
-            {
-              "modules": false,
-              "targets": {
-                "browsers": [
-                  "Chrome >= 64",
-                  "ChromeAndroid >= 64",
-                  "Edge >= 16",
-                  "Firefox >= 58",
-                  "iOS >= 11",
-                  "Safari >= 11"
-                ]
-              }
-            }
-          ]
-        ]
-      },
-      "development": {
-        "presets": [
-          [
-            "env",
-            {
-              "modules": false,
-              "targets": {
-                "browsers": [
-                  "Chrome >= 64",
-                  "ChromeAndroid >= 64",
-                  "Edge >= 16",
-                  "Firefox >= 58",
-                  "iOS >= 11",
-                  "Safari >= 11"
-                ]
-              }
-            }
-          ]
-        ]
-      },
-      "test": {
-        "presets": [
-          [
-            "env",
-            {
-              "targets": {
-                "node": "current"
-              }
-            }
-          ]
-        ]
-      }
-    }
-  },
   "jest": {
     "modulePaths": [
       "./src"

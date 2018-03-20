@@ -4,7 +4,7 @@ import styles from './styles.css';
 import { Link } from 'react-router-dom';
 
 const NavLink = ({ children, ...props }) => (
-  <li className={styles.container}>
+  <li className={styles.root}>
     <Link {...props} className={styles.link}>
       {children}
     </Link>

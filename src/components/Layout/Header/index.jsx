@@ -8,7 +8,7 @@ export const text = {
 };
 
 const Header = () => (
-  <div className={styles.container}>
+  <div className={styles.root}>
     <Link to="/" className={styles.brand}>
       {text.brandLink}
     </Link>

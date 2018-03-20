@@ -1,0 +1,63 @@
+{
+  "presets": [
+    "react",
+    "stage-3"
+  ],
+  "plugins": [
+    "transform-class-properties"
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false,
+            "targets": {
+              "browsers": [
+                "Chrome >= 64",
+                "ChromeAndroid >= 64",
+                "Edge >= 16",
+                "Firefox >= 58",
+                "iOS >= 11",
+                "Safari >= 11"
+              ]
+            }
+          }
+        ]
+      ]
+    },
+    "development": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false,
+            "targets": {
+              "browsers": [
+                "Chrome >= 64",
+                "ChromeAndroid >= 64",
+                "Edge >= 16",
+                "Firefox >= 58",
+                "iOS >= 11",
+                "Safari >= 11"
+              ]
+            }
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
