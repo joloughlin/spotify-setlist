@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { compose, flattenProp } from 'recompose';
 import { addProps, redirectToLoginIfPropFalsy } from 'utils/recompose';
-import { currentUser } from 'reducers/authentication/selectors';
+import { currentUser } from 'reducers/authentication';
 
 const mapStateToProps = state => ({
   currentUser: currentUser(state),
