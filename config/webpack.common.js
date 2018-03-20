@@ -11,7 +11,13 @@ module.exports = {
   module: {
     rules: [
       {
-        exclude: [/\.html$/, /\.(js|jsx)(\?.*)?$/, /\.css$/, /\.svg$/],
+        exclude: [
+          /\.html$/,
+          /\.(js|jsx)(\?.*)?$/,
+          /\.css$/,
+          /\.svg$/,
+          /\.json$/,
+        ],
         loader: 'url-loader',
         options: {
           limit: 10000,

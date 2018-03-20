@@ -2,7 +2,7 @@ import { SubmissionError } from 'redux-form';
 import { backEndAPIUrl } from 'constants/values';
 import { bodyHeaders } from 'utils/apiHeaders.js';
 import { normalizeAuthentication } from './normalizers';
-import loginSuccessFixture from './fixtures/loginSuccess.json';
+import loginSuccessFixture from './fixtures/loginSuccess';
 
 export const create = async values => {
   const body = JSON.stringify({ session: values });
@@ -17,7 +17,7 @@ export const create = async values => {
 
   const response = {
     ok: true,
-    json: async () => loginSuccessFixture,
+    json: async () => JSON.parse(loginSuccessFixture),
     url,
     init,
   };
