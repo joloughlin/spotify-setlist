@@ -36,6 +36,7 @@
     "css-loader": "^0.28.4",
     "dotenv": "^5.0.1",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "4.19.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-loader": "^2.0.0",
@@ -44,7 +45,6 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^3.0.2",
-    "fetch-mock": "^6.3.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.0.7",
     "husky": "^0.14.3",
@@ -169,7 +169,7 @@
     "setupFiles": [
       "<rootDir>/config/jest/polyfills.js"
     ],
-    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "setupTestFrameworkScriptFile": "<rootDir>/config/jest/setupTestFrameworkScript.js",
     "testPathIgnorePatterns": [
       "<rootDir>[/\\\\](build|docs|node_modules|scripts)[/\\\\]"
     ],

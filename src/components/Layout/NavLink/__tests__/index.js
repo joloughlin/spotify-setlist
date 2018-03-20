@@ -17,7 +17,7 @@ describe('NavLink', () => {
   it('renders Link', () => {
     const element = wrapper.find(Link);
 
-    expect(element).toBePresent();
+    expect(element).toExist();
 
     const { children, to } = element.props();
 

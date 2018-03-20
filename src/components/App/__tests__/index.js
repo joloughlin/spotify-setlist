@@ -24,7 +24,7 @@ describe('App', () => {
         return component === routeComponent;
       });
 
-      expect(element).toBePresent();
+      expect(element).toExist();
     });
   });
 });

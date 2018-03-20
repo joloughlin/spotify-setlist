@@ -23,7 +23,7 @@ describe('Root', () => {
   it('renders Provider', () => {
     const element = wrapper.find(Provider);
 
-    expect(element).toBePresent();
+    expect(element).toExist();
 
     const { store } = element.props();
     expect(store).toBe(props.store);
@@ -32,12 +32,12 @@ describe('Root', () => {
   it('renders BrowserRouter', () => {
     const element = wrapper.find(BrowserRouter);
 
-    expect(element).toBePresent();
+    expect(element).toExist();
   });
 
   it('renders App', () => {
     const element = wrapper.find(App);
 
-    expect(element).toBePresent();
+    expect(element).toExist();
   });
 });

@@ -14,13 +14,13 @@ describe('Header', () => {
   it('renders NavLinks', () => {
     const element = wrapper.find(NavLinks);
 
-    expect(element).toBePresent();
+    expect(element).toExist();
   });
 
   it('renders Link', () => {
     const element = wrapper.find(Link);
 
-    expect(element).toBePresent();
+    expect(element).toExist();
     expect(element.children()).toIncludeText(text.brandLink);
   });
 });
