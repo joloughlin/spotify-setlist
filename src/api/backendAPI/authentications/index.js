@@ -17,7 +17,7 @@ export const create = async values => {
 
   const response = {
     ok: true,
-    json: async () => JSON.parse(loginSuccessFixture),
+    json: async () => loginSuccessFixture,
     url,
     init,
   };

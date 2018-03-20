@@ -1,5 +1,5 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsWebpackPlugin = require('uglifyjs-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const WebpackS3Plugin = require('webpack-s3-plugin');
@@ -27,52 +27,48 @@ module.exports = {
       {
         test: /\.css$/,
         include: /node_modules/,
-        use: ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: { importLoaders: 1 },
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                config: {
-                  path: commonPaths.postcssConfig,
-                },
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: commonPaths.postcssConfig,
               },
             },
-          ],
-        }),
+          },
+        ],
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-                importLoaders: 1,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: commonPaths.postcssConfig,
               },
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                config: {
-                  path: commonPaths.postcssConfig,
-                },
-              },
-            },
-          ],
-        }),
+          },
+        ],
       },
     ],
   },
   plugins: [
-    new ExtractTextWebpackPlugin({
+    new MiniCssExtractPlugin({
       filename: '[name]-[hash].css',
     }),
     new UglifyJsWebpackPlugin({
