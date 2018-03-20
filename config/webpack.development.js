@@ -71,7 +71,6 @@ module.exports = {
   ],
   devtool: 'eval-source-map',
   devServer: {
-    contentBase: '/',
     historyApiFallback: true,
     hot: true,
     inline: true,
