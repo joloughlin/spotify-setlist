@@ -7,6 +7,7 @@ If you have not already, please install:
     ```
     $ asdf install
     $ cp .env.sample .env.development
+    $ cp .env.sample .env.test
     $ yarn install
     $ yarn run initial-setup
     ```
@@ -22,6 +23,7 @@ If you have not already, please install:
     ```
     $ asdf install
     $ cp .env.sample .env.development
+    $ cp .env.sample .env.test
     $ yarn install
     $ yarn start
     ```

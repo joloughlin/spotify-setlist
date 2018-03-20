@@ -9,7 +9,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config=config/webpack.config.js --env.env=development",
-    "test": "node scripts/test.js --env=jsdom",
+    "test": "NODE_ENV=test node scripts/test.js --env=jsdom",
     "build": "NODE_ENV=production node_modules/.bin/webpack --config=config/webpack.config.js",
     "build-staging": "yarn build --env.env=staging",
     "build-production": "yarn build --env.env=production",
@@ -29,7 +29,7 @@
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-env": "^1.5.2",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "clean-webpack-plugin": "^0.1.16",
@@ -89,15 +89,76 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "browserslist": [
+    "Chrome >= 64",
+    "ChromeAndroid >= 64",
+    "Edge >= 16",
+    "Firefox >= 58",
+    "iOS >= 11",
+    "Safari >= 11"
+  ],
   "babel": {
     "presets": [
-      "env",
       "react",
       "stage-3"
     ],
     "plugins": [
       "transform-class-properties"
-    ]
+    ],
+    "env": {
+      "production": {
+        "presets": [
+          [
+            "env",
+            {
+              "modules": false,
+              "targets": {
+                "browsers": [
+                  "Chrome >= 64",
+                  "ChromeAndroid >= 64",
+                  "Edge >= 16",
+                  "Firefox >= 58",
+                  "iOS >= 11",
+                  "Safari >= 11"
+                ]
+              }
+            }
+          ]
+        ]
+      },
+      "development": {
+        "presets": [
+          [
+            "env",
+            {
+              "modules": false,
+              "targets": {
+                "browsers": [
+                  "Chrome >= 64",
+                  "ChromeAndroid >= 64",
+                  "Edge >= 16",
+                  "Firefox >= 58",
+                  "iOS >= 11",
+                  "Safari >= 11"
+                ]
+              }
+            }
+          ]
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "node": "current"
+              }
+            }
+          ]
+        ]
+      }
+    }
   },
   "jest": {
     "modulePaths": [
