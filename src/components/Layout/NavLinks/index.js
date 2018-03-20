@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import NavLink from '../NavLink';
 import { loginPath, rootPath } from 'utils';
 import styles from './styles.css';
@@ -22,5 +23,10 @@ const NavLinks = ({ isAuthenticated, logOut }) => (
     </ul>
   </nav>
 );
+
+NavLinks.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  logOut: PropTypes.func.isRequired,
+};
 
 export default enhance(NavLinks);
