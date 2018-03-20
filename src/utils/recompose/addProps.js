@@ -1,6 +1,6 @@
 import { withProps } from 'recompose';
 
-export default function addProps(funcsByPropNames) {
+export const addProps = funcsByPropNames => {
   const propNames = Object.keys(funcsByPropNames);
 
   const createProps = props =>
@@ -11,4 +11,4 @@ export default function addProps(funcsByPropNames) {
     }, {});
 
   return withProps(createProps);
-}
+};

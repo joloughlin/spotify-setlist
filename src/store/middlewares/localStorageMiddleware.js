@@ -1,4 +1,4 @@
-import { clearLocalStorage, setLocalStorage } from 'utils/localStorage';
+import { clearLocalStorage, setLocalStorage } from 'utils';
 import types from 'constants/actionTypes';
 
 export default store => next => action => {

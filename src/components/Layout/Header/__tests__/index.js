@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header, { text } from '../index';
 import NavLinks from '../../NavLinks';
-import shallowWithRouter from 'utils/test/shallowWithRouter';
+import { shallowWithRouter } from 'utils/test';
 
 describe('Header', () => {
   let wrapper;

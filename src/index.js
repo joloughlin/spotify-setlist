@@ -5,7 +5,7 @@ import './constants/colors.css';
 import './constants/styles.css';
 import Root from './components/Root';
 import configureStore from './store/configureStore';
-import { readLocalStorage } from './utils/localStorage';
+import { readLocalStorage } from './utils';
 
 const container = document.getElementById('app');
 const localStorageInitialState = readLocalStorage();

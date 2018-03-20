@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import BaseComponent from '../BaseComponent';
+import { BaseComponent } from '../BaseComponent';
 
 describe('BaseComponent', () => {
   let wrapper;

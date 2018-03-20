@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ToJSON from '../../ToJSON';
-import renderToJSON from '../renderToJSON';
-import BaseComponent from 'utils/test/BaseComponent';
+import { ToJSON } from '../ToJSON';
+import { renderToJSON } from '../renderToJSON';
+import BaseComponent from 'utils/test';
 
 describe('renderToJSON', () => {
   let props, wrapper;

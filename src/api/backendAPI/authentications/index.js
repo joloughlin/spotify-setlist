@@ -1,6 +1,6 @@
 import { SubmissionError } from 'redux-form';
 import { backEndAPIUrl } from 'constants/values';
-import { bodyHeaders } from 'utils/apiHeaders.js';
+import { bodyHeaders } from 'utils';
 import { normalizeAuthentication } from './normalizers';
 import loginSuccessFixture from './fixtures/loginSuccess';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ToJSON from '../ToJSON';
+import { ToJSON } from '../ToJSON';
 
 describe('ToJSON', () => {
   let props, wrapper;
@@ -13,6 +13,8 @@ describe('ToJSON', () => {
   });
 
   it('renders props as text', () => {
-    expect(wrapper).toIncludeText('{ "id": "1"\n}');
+    const text = { id: '1' };
+    const formattedText = JSON.stringify(text, null, 2);
+    expect(wrapper).toIncludeText(formattedText);
   });
 });

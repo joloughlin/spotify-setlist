@@ -17,7 +17,7 @@ describe('Layout', () => {
   it('renders DevTools', () => {
     const element = wrapper.find(DevTools);
 
-    expect(element).toBePresent();
+    expect(element).toExist();
   });
 
   it('renders children', () => {
@@ -27,6 +27,6 @@ describe('Layout', () => {
   it('renders Header', () => {
     const element = wrapper.find(Header);
 
-    expect(element).toBePresent();
+    expect(element).toExist();
   });
 });

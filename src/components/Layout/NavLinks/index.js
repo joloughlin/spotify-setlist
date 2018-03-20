@@ -1,6 +1,6 @@
 import React from 'react';
 import NavLink from '../NavLink';
-import { loginPath, rootPath } from 'utils/paths';
+import { loginPath, rootPath } from 'utils';
 import styles from './styles.css';
 import enhance from './enhance';
 

@@ -1,5 +1,5 @@
 import { branch, compose, renderNothing } from 'recompose';
-import addProps from 'utils/recompose/addProps';
+import { addProps } from 'utils/recompose';
 
 export const message = ({ error, touched, warning }) => {
   const errorOrWarningMessage = error || warning;

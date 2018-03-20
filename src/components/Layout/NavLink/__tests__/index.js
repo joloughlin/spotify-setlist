@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavLink from '../index';
-import shallowWithRouter from 'utils/test/shallowWithRouter';
+import { shallowWithRouter } from 'utils/test';
 
 describe('NavLink', () => {
   let props, wrapper;

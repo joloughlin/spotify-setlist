@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import addProps from '../addProps';
-import BaseComponent from '../../test/BaseComponent';
+import { addProps } from '../addProps';
+import { BaseComponent } from '../../test';
 
 describe('addProps', () => {
   const a = 'a';

@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, formPropTypes } from 'redux-form';
 import enhance from './enhance';
 import TextField from 'components/UI/TextField';
-import { required, minimumLength7 } from 'utils/validations';
+import { required, minimumLength7 } from 'utils';
 
 export const text = {
   button: 'Submit',

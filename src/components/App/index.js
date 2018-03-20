@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { loginPath, profilePath, rootPath } from 'utils/paths';
+import { loginPath, profilePath, rootPath } from 'utils';
 import HomePage from '../HomePage/Root';
 import LogIn from '../LogIn/Root';
 import Profile from '../Profile/Root';

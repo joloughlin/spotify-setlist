@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { shallow } from 'enzyme';
-import createToggleProps from '../createToggleProps';
-import BaseComponent from '../..//test/BaseComponent';
+import { createWithToggle } from '../createWithToggle';
+import { BaseComponent } from '../../test';
 
-describe('createToggleProps', () => {
+describe('createWithToggle', () => {
   let EnhancedBaseComponent,
     EnhancedBaseComponentInitiallyTrue,
     props,
@@ -23,11 +23,11 @@ describe('createToggleProps', () => {
       toggleOnName,
     };
 
-    const withToggleProps = createToggleProps(toggleConfiguration);
+    const withToggleProps = createWithToggle(toggleConfiguration);
 
     EnhancedBaseComponent = withToggleProps(BaseComponent);
 
-    const withTogglePropsInitiallyTrue = createToggleProps({
+    const withTogglePropsInitiallyTrue = createWithToggle({
       ...toggleConfiguration,
       initialState: true,
     });
@@ -43,7 +43,7 @@ describe('createToggleProps', () => {
     });
 
     it('passes down the expected initial state', () => {
-      const state = wrapper.props()[stateName];
+      const state = wrapper.state()[stateName];
       expect(state).toBe(false);
     });
 
@@ -52,7 +52,7 @@ describe('createToggleProps', () => {
 
       handler();
 
-      const state = wrapper.props()[stateName];
+      const state = wrapper.state()[stateName];
 
       expect(state).toBe(true);
     });
@@ -62,7 +62,7 @@ describe('createToggleProps', () => {
 
       handler();
 
-      const state = wrapper.props()[stateName];
+      const state = wrapper.state()[stateName];
 
       expect(state).toBe(false);
     });
@@ -72,7 +72,7 @@ describe('createToggleProps', () => {
 
       handler();
 
-      const state = wrapper.props()[stateName];
+      const state = wrapper.state()[stateName];
 
       expect(state).toBe(true);
     });
@@ -84,7 +84,7 @@ describe('createToggleProps', () => {
     });
 
     it('passes down the expected initial state', () => {
-      const state = wrapper.props()[stateName];
+      const state = wrapper.state()[stateName];
       expect(state).toBe(true);
     });
 
@@ -93,7 +93,7 @@ describe('createToggleProps', () => {
 
       handler();
 
-      const state = wrapper.props()[stateName];
+      const state = wrapper.state()[stateName];
 
       expect(state).toBe(false);
     });
@@ -103,7 +103,7 @@ describe('createToggleProps', () => {
 
       handler();
 
-      const state = wrapper.props()[stateName];
+      const state = wrapper.state()[stateName];
 
       expect(state).toBe(false);
     });
@@ -113,7 +113,7 @@ describe('createToggleProps', () => {
 
       handler();
 
-      const state = wrapper.props()[stateName];
+      const state = wrapper.state()[stateName];
 
       expect(state).toBe(true);
     });
