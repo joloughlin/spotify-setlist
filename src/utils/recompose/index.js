@@ -3,5 +3,4 @@ export * from './createWithToggle';
 export * from './nestUnder';
 export * from './redirectIf';
 export * from './redirectToLoginIfPropFalsy';
-export * from './redirectToProfileIfPropTruthy';
 export * from './withModal';

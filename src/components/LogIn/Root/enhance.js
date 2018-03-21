@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { compose, withHandlers } from 'recompose';
 import { reduxForm } from 'redux-form';
 import { isAuthenticated, logIn, logOut } from 'reducers/authentication';
-import { redirectToProfileIfPropTruthy } from 'utils/recompose';
 import { profilePath } from 'utils';
 
 const mapStateToProps = state => ({
@@ -22,7 +21,6 @@ export const onSubmit = ({ history, location, logIn }) => async values => {
 
 export default compose(
   connect(mapStateToProps, mapDispatchtoProps),
-  redirectToProfileIfPropTruthy('isAuthenticated'),
   withHandlers({ onSubmit }),
   reduxForm({ form: 'LogIn' }),
 );
