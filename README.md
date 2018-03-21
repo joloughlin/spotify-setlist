@@ -3,8 +3,10 @@ If you have not already, please install:
 * [asdf](https://github.com/asdf-vm/asdf)
 * [Yarn](https://yarnpkg.com/en/docs/install)
 
-1. Run the following commands
+1. Run the following commands (change `your-app-name` to desired repository name).
     ```
+    $ git clone https://github.com/IntrepidPursuits/react-starter-kit.git your-app-name
+    $ cd your-app-name
     $ asdf install
     $ cp .env.sample .env.development
     $ cp .env.sample .env.test
