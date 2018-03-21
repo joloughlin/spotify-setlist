@@ -1,4 +1,4 @@
-import { createRejectableThunk } from 'utils/createThunk';
+import { createRejectableThunk } from 'utils';
 import * as backendAPI from 'api/backendAPI/authentications';
 import types from 'constants/actionTypes';
 

@@ -1,0 +1,13 @@
+.root {
+  align-items: center;
+  background-color: var(--yellow);
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.brand {
+  color: var(--black);
+  text-decoration: none;
+}

@@ -10,7 +10,7 @@ export const createPropsMapper = ({ pathname, search, state }) => props => {
   return { to };
 };
 
-export default ({ pathname, search, state }) => {
+export const renderRedirect = ({ pathname, search, state }) => {
   const propsMapper = createPropsMapper({ pathname, search, state });
   const enhance = mapProps(propsMapper);
   const EnhancedRedirect = enhance(Redirect);

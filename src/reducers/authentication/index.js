@@ -17,3 +17,5 @@ const authentication = (state = initialState, { type, payload }) => {
 };
 
 export default authentication;
+export * from './actions';
+export * from './selectors';

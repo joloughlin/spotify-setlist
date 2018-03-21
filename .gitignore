@@ -2,8 +2,11 @@
 /coverage
 node_modules
 npm-debug.log
-.env
+/diff_output
+.env.development
 .env.production
 .env.staging
+.env.test
 coverage
 dump.rdb
+yarn-error.log

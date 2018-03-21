@@ -1,5 +1,5 @@
 import { branch } from 'recompose';
-import renderRedirect from './renderRedirect';
+import { renderRedirect } from './renderRedirect';
 
-export default (test, { pathname, search, state }) =>
+export const redirectIf = (test, { pathname, search, state }) =>
   branch(test, renderRedirect({ pathname, search, state }));

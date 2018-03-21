@@ -1,4 +1,4 @@
 import { nest } from 'recompose';
 
-export default ParentComponent => BaseComponent =>
+export const nestUnder = ParentComponent => BaseComponent =>
   nest(ParentComponent, BaseComponent);

@@ -1,12 +1,12 @@
 import { SubmissionError } from 'redux-form';
-import { backendAPIUrl } from 'constants/values';
-import { bodyHeaders } from 'utils/apiHeaders.js';
+import { backEndAPIUrl } from 'constants/values';
+import { bodyHeaders } from 'utils';
 import { normalizeAuthentication } from './normalizers';
-import loginSuccessFixture from './fixtures/loginSuccess.json';
+import loginSuccessFixture from './fixtures/loginSuccess';
 
 export const create = async values => {
   const body = JSON.stringify({ session: values });
-  const url = `${backendAPIUrl}/authentications`;
+  const url = `${backEndAPIUrl}/authentications`;
   const init = {
     method: 'POST',
     body,
